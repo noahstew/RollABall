@@ -11,11 +11,11 @@ public class InputManager : MonoBehaviour
         Vector3 inputVector = Vector3.zero;
         if (Input.GetKey(KeyCode.W))
         {
-            inputVector += Vector3.up;
+            inputVector += Vector3.forward;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            inputVector += Vector3.down;
+            inputVector += Vector3.back;
         }
         if (Input.GetKey(KeyCode.A))
         {
@@ -24,6 +24,10 @@ public class InputManager : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             inputVector += Vector3.right;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            inputVector += Vector3.up;
         }
 
         OnMove?.Invoke(inputVector);
